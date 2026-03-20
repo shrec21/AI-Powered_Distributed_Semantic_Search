@@ -2,7 +2,7 @@
 
 A scalable **Retrieval-Augmented Generation (RAG) index builder** designed to process large collections of research PDFs, chunk text intelligently, compute embeddings, and prepare data for efficient semantic search using vector indexes.
 
-Built as part of **CS 441** to explore distributed systems, IR pipelines, and modern LLM retrieval architectures.
+Built as part of **UIC CS 441** to explore distributed systems, IR pipelines, and modern LLM retrieval architectures.
 
 ---
 
