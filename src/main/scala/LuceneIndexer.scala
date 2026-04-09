@@ -14,6 +14,7 @@ class LuceneIndexer(indexDir: Path, vectorDim: Int, append: Boolean = false):
 
   // IndexWriterConfig controls how Lucene writes index files.
   private val config = new IndexWriterConfig(analyzer)
+  config.setRAMBufferSizeMB(256.0)
   if append then
     config.setOpenMode(IndexWriterConfig.OpenMode.APPEND)
   else
@@ -68,5 +69,6 @@ class LuceneIndexer(indexDir: Path, vectorDim: Int, append: Boolean = false):
 
   /** Commit changes and close the index. */
   def close(): Unit =
+    writer.forceMerge(1)
     writer.commit()
     writer.close()
