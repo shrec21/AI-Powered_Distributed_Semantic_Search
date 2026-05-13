@@ -19,5 +19,11 @@ libraryDependencies ++= Seq(
 
   "org.apache.lucene" % "lucene-core" % "9.10.0",
   "org.apache.lucene" % "lucene-analysis-common" % "9.10.0",
+
 )
 
+assembly / test := {}
+assembly / assemblyMergeStrategy := {
+case PathList("META-INF", _ @ _*) => MergeStrategy.discard
+case _ => MergeStrategy.first
+}
